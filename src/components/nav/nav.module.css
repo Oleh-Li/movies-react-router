@@ -1,0 +1,12 @@
+.listContainer {
+  display: flex;
+  list-style: none;
+}
+
+.listItem {
+  margin-right: 40px;
+  text-decoration: underline;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+}
