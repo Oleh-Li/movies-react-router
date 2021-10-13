@@ -5,8 +5,8 @@ export default class SearchMovies extends Component {
   render() {
     return (
       <form>
-        <input autoComplete="off" type="text" placeholder="Movie Name" />
-        <button type="submit">Search</button>
+        <input className={styles.movieInput} autoComplete="off" type="text" placeholder="Movie Name" />
+        <button className={styles.movieInputBtton} type="submit">Search</button>
       </form>
     );
   }

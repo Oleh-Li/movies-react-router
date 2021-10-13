@@ -1,6 +1,6 @@
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import MoviesDetailsPage from "./pages/MoviesDetailsPage";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 import NotFound from "./pages/NotFound";
 import Nav from "./components/nav/Nav";
 import styles from "./App.module.css";
@@ -12,7 +12,7 @@ function App() {
       <Nav />
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/movies/:movieId" component={MoviesDetailsPage} />
+        <Route path="/movies/:movieId" component={MovieDetailsPage} />
         <Route path="/movies" component={SearchMovies} />
         <Route component={NotFound} />
       </Switch>

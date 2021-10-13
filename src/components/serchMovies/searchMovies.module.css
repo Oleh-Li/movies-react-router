@@ -1,0 +1,17 @@
+.movieInput{
+width: 220px;
+height: 32px;
+margin-left: 25px;
+font-size: 17px;
+}
+
+.movieInputBtton{
+    height: 38px;
+    width: 70px;
+    font-size: 16px;
+    font-weight: bold;
+    color: dimgray;
+    margin-left: 10px;
+
+}
+
