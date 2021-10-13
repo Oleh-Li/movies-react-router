@@ -18,7 +18,7 @@ export default class HomePage extends React.Component {
     return (
       <Fragment>
         <h2>Popular Movies Today</h2>
-        <MoviesList items={items} />
+        {items && <MoviesList items={items} />}
       </Fragment>
     );
   }

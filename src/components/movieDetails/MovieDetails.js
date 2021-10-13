@@ -1,32 +1,31 @@
 import React from "react";
-import styles from "./MovieDetailsPage.module.css";
+import styles from "./MovieDetails.module.css";
 import shortid from "shortid";
 
-const MovieDetailsPage = (props) => {
-  console.log("props data", props.data);
+const MovieDetails = ({poster_path, original_title, vote_average, overview, genres, onGoBack}) => {
   return (
     <div>
-      <button className={styles.backButton} type="button">Go Back</button>
+      <button onClick={onGoBack} className={styles.backButton} type="button">Go Back</button>
     <div className={styles.container}>
       <img
         className={styles.posterImg}
         src={
           "https://www.themoviedb.org/t/p/w300_and_h450_face" +
-          props.data.poster_path
+          poster_path
         }
         alt="poster"
       />
       <div>
-        <h2>{props.data.original_title}</h2>
-        <p>User Score: {props.data.vote_average}</p>
+        <h2>{original_title}</h2>
+        <p>User Score: {vote_average}</p>
         <p>
           <b>Overview</b>
         </p>
-        <p>{props.data.overview}</p>
+        <p>{overview}</p>
         <p>
           <b>Genres</b>
         </p>
-        {props.data.genres.map((item) => (
+        {genres.map((item) => (
           <span key={shortid.generate()}>{item.name} </span>
         ))}
       </div>
@@ -35,4 +34,4 @@ const MovieDetailsPage = (props) => {
   );
 };
 
-export default MovieDetailsPage;
+export default MovieDetails;

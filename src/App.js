@@ -1,9 +1,10 @@
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import MoviesPage from "./pages/MoviesPage";
+import MoviesDetailsPage from "./pages/MoviesDetailsPage";
 import NotFound from "./pages/NotFound";
 import Nav from "./components/nav/Nav";
 import styles from "./App.module.css";
+import SearchMovies from "./components/serchMovies/SearchMovies";
 
 function App() {
   return (
@@ -11,8 +12,8 @@ function App() {
       <Nav />
       <Switch>
         <Route path="/" exact component={HomePage} />
-        <Route path="/movies/:movieId" component={MoviesPage} />
-        <Route path="/movies" component={MoviesPage} />
+        <Route path="/movies/:movieId" component={MoviesDetailsPage} />
+        <Route path="/movies" component={SearchMovies} />
         <Route component={NotFound} />
       </Switch>
     </div>

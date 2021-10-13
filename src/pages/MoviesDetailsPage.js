@@ -1,11 +1,11 @@
 import React from "react";
 import { Route, NavLink } from "react-router-dom";
 import * as moviesApi from "../services/movies-api";
-import MovieDetailsPage from "../components/movieDetailsPage/MovieDetailsPage";
+import MovieDetails from "../components/movieDetails/MovieDetails";
 import Cast from "../components/cast/Cast";
 import Reviews from "../components/reviews/Reviews";
 
-export default class MoviesPage extends React.Component {
+export default class MoviesPageDetails extends React.Component {
   state = {
     data: null,
   };
@@ -15,12 +15,17 @@ export default class MoviesPage extends React.Component {
       .then((data) => this.setState({ data }));
   }
 
+  onGoBack=()=>{
+    console.log("onGoBack",this.props)
+    this.props.history.push("/movies")
+  }
+
   render() {
     const { data } = this.state;
-    console.log("Data", data);
+    console.log("MoviesPage Data", data);
     return (
       <div>
-        {data && <MovieDetailsPage data={data} />}
+        {data && <MovieDetails {...data} onGoBack={this.onGoBack}/>}
         <ul>
           {data && (
             <li>
