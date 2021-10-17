@@ -20,13 +20,11 @@ export default class MoviesPageDetails extends React.Component {
   }
 
   onGoBack = () => {
-    console.log("onGoBack", this.props);
     this.props.history.push("/movies");
   };
 
   render() {
     const { data, isLoading } = this.state;
-    console.log("MoviesPage Data", data);
     return (
       <div>
         {isLoading && <Loader />}
@@ -53,18 +51,18 @@ export default class MoviesPageDetails extends React.Component {
         </ul>
         {data && (
           <Route
-            path={"/movies/" + this.props.match.params.movieId + "/cast"}
+            path={"/movies/:movieId/cast"}
             component={Cast}
           />
         )}
         {data && (
           <Route
-            path={"/movies/" + this.props.match.params.movieId + "/reviews"}
+            path={"/movies/:movieId/reviews"}
             component={Reviews}
           />
         )}
 
-        {!data && <h2>Movies!!1</h2>}
+        {!data && <Loader/>}
       </div>
     );
   }

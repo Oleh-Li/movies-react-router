@@ -4,9 +4,6 @@ import Spinner from "./components/loader/Loader";
 import NotFound from "./pages/NotFound";
 import Nav from "./components/nav/Nav";
 import styles from "./App.module.css";
-// import HomePage from "./pages/HomePage";
-// import MovieDetailsPage from "./pages/MovieDetailsPage";
-// import SearchMoviesPage from "./pages/SearchMoviesPage";
 
 const AsyncHomePage = lazy(() =>
   import("./pages/HomePage" /* webpackChunkName: "HomePage" */)
@@ -24,7 +21,7 @@ function App() {
   return (
     <div className={styles.appContainer}>
       <Nav />
-      <Suspense fallback={Spinner}>
+      <Suspense fallback={<Spinner/>}>
         <Switch>
           <Route path="/" exact component={AsyncHomePage} />
           <Route path="/movies/:movieId" component={AsyncMovieDetailsPage} />

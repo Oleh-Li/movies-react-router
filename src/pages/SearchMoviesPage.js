@@ -42,7 +42,6 @@ export default class SearchMoviesPage extends Component {
 
   render() {
     const { items, isLoading } = this.state;
-    console.log("searched items", items, "search query", this.state.query);
     return (
       <Fragment>
         {isLoading && Loader}
